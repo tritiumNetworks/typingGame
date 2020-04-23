@@ -1,0 +1,46 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.score {
+  display: flex;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 5rem;
+}
+
+.plus {
+  font-size: 70%;
+  color: #929292;
+}
+
+.type {
+  text-align: center;
+  border: none;
+  caret-color: #6bc4ff7a;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 2rem;
+  background-color: transparent;
+}
+
+.type:focus {
+  outline: none;
+}
+
+.timer {
+  position: absolute;
+  left: 50%;
+  top: -50%;
+  width: 50%;
+  height: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -10;
+}
