@@ -3,6 +3,7 @@
 window.addEventListener('load', () => {
   const type = document.getElementsByClassName('type')[0]
   let target = Math.floor(Math.random() * 0x2BAF) + 0xAC00
+  let log = ''
   let score = 0
   let plus = 0
   let started = false
@@ -15,7 +16,11 @@ window.addEventListener('load', () => {
     svgStyle: null,
     step: (_, s) => {
       if (s.value() === 1) {
-        alert('끝!\n스코어: ' + score + '점')
+        let v = 0
+        log.split('').forEach((c) => {
+          v += c.charCodeAt(0)
+        })
+        alert('끝!\n스코어: ' + score + '점\n글자들: ' + log + '\nR스코어: ' + v + '점')
         window.location.reload()
       }
     }
@@ -33,6 +38,7 @@ window.addEventListener('load', () => {
     started = true
 
     if (type.value.charCodeAt(0) !== target) return
+    log += String.fromCharCode(target)
 
     bar.set(0)
     started = false
